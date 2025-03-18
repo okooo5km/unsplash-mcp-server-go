@@ -105,6 +105,17 @@ The server requires an Unsplash API access key to function. Set it in your envir
 export UNSPLASH_ACCESS_KEY="your-access-key-here"
 ```
 
+* Unsplash API Access Key (register at [Unsplash Developers Portal](https://unsplash.com/developers))
+
+### Obtain an Unsplash API Access Key
+
+1. Go to the [Unsplash Developers Portal](https://unsplash.com/developers)
+2. Sign up or log in to your Unsplash account
+3. Register a new application
+4. Accept the API use and guidelines
+5. Fill in your application details (name, description, etc.)
+6. Once registered, you'll receive your Access Key (also called Client ID)
+
 ### Configure for Claude.app
 
 Add to your Claude settings:
@@ -142,6 +153,8 @@ Add the following configuration to your Cursor editor's `settings.json`:
 
 ### Use in Chatwise
 
+<video src="https://github.com/user-attachments/assets/ade1e290-3c95-4561-aa32-fa3a729160c4" controls></video>
+
 ## Development Requirements
 
 * Swift 6.0 or later
@@ -156,3 +169,86 @@ See GitHub Releases for version history and changelog.
 ## License
 
 unsplash-mcp-server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
+
+# Unsplash API Tools
+
+A Swift implementation of Unsplash API integration tools, providing easy access to Unsplash's photo services.
+
+## Features
+
+* **Photo Search**: Search Unsplash photos with customizable parameters including:
+  * Keyword-based search
+  * Color filtering
+  * Orientation filtering
+  * Pagination support
+  * Custom sorting options
+
+* **Photo Details**: Retrieve comprehensive information about specific photos:
+  * Basic metadata (dimensions, description)
+  * Photographer information
+  * Location data
+  * EXIF camera data
+  * Download statistics
+  * Tags and related information
+
+* **Random Photos**: Get random photos with flexible filtering options:
+  * Customizable count (up to 30 photos)
+  * Collection-based filtering
+  * Topic-based filtering
+  * Username filtering
+  * Content safety filtering
+  * Orientation preferences
+
+## Technical Details
+
+* Built with Swift
+* Integrated logging system using MCPServer logger
+* Asynchronous API operations
+* Error handling and comprehensive logging
+* Type-safe API responses using Codable
+* Environment-based configuration
+
+## Requirements
+
+* Unsplash API Access Key (register at [Unsplash Developers Portal](https://unsplash.com/developers))
+
+## Getting Started
+
+### 1. Obtain an Unsplash API Access Key
+
+1. Go to the [Unsplash Developers Portal](https://unsplash.com/developers)
+2. Sign up or log in to your Unsplash account
+3. Register a new application
+4. Accept the API use and guidelines
+5. Fill in your application details (name, description, etc.)
+6. Once registered, you'll receive your Access Key (also called Client ID)
+
+### 2. Set Up Environment Variable
+
+Set your Unsplash API Access Key as an environment variable:
+
+```bash
+export UNSPLASH_ACCESS_KEY="your_access_key_here"
+```
+
+For persistent configuration, add the above line to your `.bashrc`, `.zshrc`, or equivalent shell configuration file.
+
+## Usage
+
+Import the package and use any of the three main tools:
+
+* `searchPhotosTool`
+* `getPhotoTool`
+* `randomPhotoTool`
+
+Each tool provides type-safe inputs and structured responses for easy integration.
+
+## Logging
+
+The application uses `mcpLogger` for logging. You can view logs in real-time using macOS Console.app:
+
+1. Open Console.app (located in Applications/Utilities)
+2. Search for your application name in the search field
+3. Filter by log levels (info, debug, error) as needed
+
+This provides a convenient way to monitor API requests, responses, and any errors during development and debugging.
