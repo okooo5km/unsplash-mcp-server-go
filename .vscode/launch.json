@@ -1,0 +1,58 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:upsplash-mcp-server-swift}",
+      "name": "Debug upsplash-mcp-server-swift",
+      "program": "${workspaceFolder:upsplash-mcp-server-swift}/.build/debug/upsplash-mcp-server-swift",
+      "preLaunchTask": "swift: Build Debug upsplash-mcp-server-swift"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:upsplash-mcp-server-swift}",
+      "name": "Release upsplash-mcp-server-swift",
+      "program": "${workspaceFolder:upsplash-mcp-server-swift}/.build/release/upsplash-mcp-server-swift",
+      "preLaunchTask": "swift: Build Release upsplash-mcp-server-swift"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:upsplash-mcp-server-swift}",
+      "name": "Debug upsplash-mcp-server",
+      "program": "${workspaceFolder:upsplash-mcp-server-swift}/.build/debug/upsplash-mcp-server",
+      "preLaunchTask": "swift: Build Debug upsplash-mcp-server"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:upsplash-mcp-server-swift}",
+      "name": "Release upsplash-mcp-server",
+      "program": "${workspaceFolder:upsplash-mcp-server-swift}/.build/release/upsplash-mcp-server",
+      "preLaunchTask": "swift: Build Release upsplash-mcp-server"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:unsplash-mcp-server-swift}",
+      "name": "Debug unsplash-mcp-server",
+      "program": "${workspaceFolder:unsplash-mcp-server-swift}/.build/debug/unsplash-mcp-server",
+      "preLaunchTask": "swift: Build Debug unsplash-mcp-server"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:unsplash-mcp-server-swift}",
+      "name": "Release unsplash-mcp-server",
+      "program": "${workspaceFolder:unsplash-mcp-server-swift}/.build/release/unsplash-mcp-server",
+      "preLaunchTask": "swift: Build Release unsplash-mcp-server"
+    }
+  ]
+}
