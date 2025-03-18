@@ -60,7 +60,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/unsplash-mcp-server.git
+   git clone https://github.com/okooo5km/unsplash-mcp-server-swift.git
    cd unsplash-mcp-server
    ```
 
