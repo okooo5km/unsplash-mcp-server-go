@@ -40,7 +40,13 @@
 
 ## Installation
 
-### Option 1: Download Pre-built Binary
+### Option 1: One-Line Installation (curl)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/okooo5km/unsplash-mcp-server-swift/main/install.sh | bash
+```
+
+### Option 2: Download Pre-built Binary
 
 1. Download the latest `unsplash-mcp-server` binary from GitHub Releases
 2. Make the binary executable:
@@ -55,13 +61,13 @@
    sudo mv /path/to/unsplash-mcp-server /usr/local/bin/
    ```
 
-### Option 2: Build from Source
+### Option 3: Build from Source
 
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/okooo5km/unsplash-mcp-server-swift.git
-   cd unsplash-mcp-server
+   cd unsplash-mcp-server-swift
    ```
 
 2. Choose a build option:
