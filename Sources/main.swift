@@ -7,7 +7,7 @@ import MCPServer
 import OSLog
 
 // Define version information
-let APP_VERSION = "0.1.0"
+let APP_VERSION = "0.1.1"
 let APP_NAME = "unsplash-mcp-server"
 
 let mcpLogger = Logger(

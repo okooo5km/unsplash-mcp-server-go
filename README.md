@@ -166,6 +166,21 @@ Add the following configuration to your Cursor editor's `settings.json`:
 
 See GitHub Releases for version history and changelog.
 
+### ☕️ Support the Project
+
+If you find unsplash-mcp-server useful, please consider supporting its development:
+
+* ⭐️ Star the project on GitHub
+* 🐛 Report bugs or suggest features in the issue tracker
+* 🔄 Submit pull requests to help improve the code
+* 💝 Support via:
+
+<p align="center">
+  <a href="https://buymeacoffee.com/okooo5km">
+    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=okooo5km&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" style="border-radius: 8px;" />
+  </a>
+</p>
+
 ## License
 
 unsplash-mcp-server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
