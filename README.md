@@ -42,26 +42,20 @@
 
 ### Option 1: One-Line Installation (curl)
 
+The easiest way to install is with the one-line installer, which automatically downloads the latest version and installs it to `~/.local/bin` in your home directory:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/okooo5km/unsplash-mcp-server-swift/main/install.sh | bash
 ```
 
-### Option 2: Download Pre-built Binary
+The installer will:
 
-1. Download the latest `unsplash-mcp-server` binary from GitHub Releases
-2. Make the binary executable:
+* Create `~/.local/bin` if it doesn't exist
+* Add this directory to your PATH (in .zshrc or .bashrc)
+* Download and install the latest version
+* Make the binary executable
 
-   ```bash
-   chmod +x /path/to/unsplash-mcp-server
-   ```
-
-3. Move the binary to a directory in your PATH (optional):
-
-   ```bash
-   sudo mv /path/to/unsplash-mcp-server /usr/local/bin/
-   ```
-
-### Option 3: Build from Source
+### Option 2: Build from Source
 
 1. Clone the repository:
 
@@ -70,35 +64,25 @@ curl -fsSL https://raw.githubusercontent.com/okooo5km/unsplash-mcp-server-swift/
    cd unsplash-mcp-server-swift
    ```
 
-2. Choose a build option:
+2. Build the project:
 
    ```bash
-   # Option A: Build for Apple Silicon (arm64)
-   swift build -c release --arch arm64 -j $(sysctl -n hw.ncpu)
-
-   # Option B: Build for Intel (x86_64)
-   swift build -c release --arch x86_64 -j $(sysctl -n hw.ncpu)
-
-   # Option C: Build Universal Binary (both arm64 and x86_64)
-   swift build -c release --arch arm64 -j $(sysctl -n hw.ncpu)
-   swift build -c release --arch x86_64 -j $(sysctl -n hw.ncpu)
-   mkdir -p .build/bin
-   lipo -create \
-     -output .build/bin/unsplash-mcp-server \
-     $(swift build -c release --arch arm64 --show-bin-path)/unsplash-mcp-server \
-     $(swift build -c release --arch x86_64 --show-bin-path)/unsplash-mcp-server
+   swift build -c release
    ```
 
-3. Install the binary (optional):
+3. Install the binary:
 
    ```bash
-   # After building, choose ONE of these commands based on your build choice:
-   # If you built for arm64 (Option A):
-   sudo cp .build/apple/Products/Release/unsplash-mcp-server /usr/local/bin/
-   # If you built for x86_64 (Option B):
-   sudo cp .build/x86_64-apple-macosx/release/unsplash-mcp-server /usr/local/bin/
-   # If you built universal binary (Option C):
-   sudo cp .build/bin/unsplash-mcp-server /usr/local/bin/
+   # Install to user directory (recommended, no sudo required)
+   mkdir -p ~/.local/bin
+   cp $(swift build -c release --show-bin-path)/unsplash-mcp-server ~/.local/bin/
+   ```
+
+   Make sure `~/.local/bin` is in your PATH by adding to your shell configuration file:
+
+   ```bash
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc  # or ~/.bashrc
+   source ~/.zshrc  # or source ~/.bashrc
    ```
 
 ## Configuration
