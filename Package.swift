@@ -9,8 +9,7 @@ let package = Package(
         .macOS(.v14)
     ],
     dependencies: [
-        .package(url: "https://github.com/gsabran/mcp-swift-sdk", from: "0.2.0"),
-        .package(url: "https://github.com/ajevans99/swift-json-schema", from: "0.3.1"),
+        .package(url: "https://github.com/gsabran/mcp-swift-sdk", from: "0.2.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -18,8 +17,7 @@ let package = Package(
         .executableTarget(
             name: "unsplash-mcp-server",
             dependencies: [
-                .product(name: "MCPServer", package: "mcp-swift-sdk"),
-                .product(name: "JSONSchemaBuilder", package: "swift-json-schema"),
+                .product(name: "MCPServer", package: "mcp-swift-sdk")
             ]
         )
 
