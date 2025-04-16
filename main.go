@@ -20,7 +20,7 @@ import (
 
 // Version information
 const (
-	version = "0.1.0" // Initial Go version
+	version = "0.2.0" // Initial Go version
 	appName = "unsplash-mcp-server"
 )
 
@@ -569,7 +569,7 @@ func main() {
 
 	// --- Start Server based on transport ---
 	fmt.Fprintf(os.Stderr, "%s v%s started successfully\n", appName, version)
-	
+
 	if transport == "stdio" {
 		fmt.Fprintln(os.Stderr, "Unsplash MCP Server running on stdio")
 		if err := server.ServeStdio(s); err != nil {
