@@ -260,10 +260,6 @@ Add the following configuration to your Cursor editor's `settings.json`:
 
 > **Note**: When adding environment variables in Chatwise, do not wrap the value in quotes (fixes #1)
 
-### Use in Chatwise
-
-<video src="https://github.com/user-attachments/assets/ade1e290-3c95-4561-aa32-fa3a729160c4" controls></video>
-
 ## Command Line Arguments
 
 The server supports the following command line arguments:
