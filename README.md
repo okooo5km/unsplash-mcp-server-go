@@ -45,7 +45,7 @@
 
 ### Option 1: Download Pre-built Binary
 
-Download the latest pre-built binary for your platform from the [GitHub Releases](https://github.com/yourusername/unsplash-mcp-server-go/releases/latest) page and follow the installation instructions below.
+Download the latest pre-built binary for your platform from the [GitHub Releases](https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest) page and follow the installation instructions below.
 
 <details>
 <summary><b>macOS Installation</b></summary>
@@ -53,7 +53,7 @@ Download the latest pre-built binary for your platform from the [GitHub Releases
 #### macOS with Apple Silicon (M1/M2/M3):
 ```bash
 # Download the arm64 version
-curl -L https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-arm64.zip -o unsplash-mcp-server.zip
+curl -L https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-arm64.zip -o unsplash-mcp-server.zip
 unzip unsplash-mcp-server.zip
 chmod +x unsplash-mcp-server
 
@@ -69,7 +69,7 @@ rm unsplash-mcp-server.zip
 #### macOS with Intel Processor:
 ```bash
 # Download the x86_64 version
-curl -L https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-x86_64.zip -o unsplash-mcp-server.zip
+curl -L https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-x86_64.zip -o unsplash-mcp-server.zip
 unzip unsplash-mcp-server.zip
 chmod +x unsplash-mcp-server
 
@@ -85,7 +85,7 @@ rm unsplash-mcp-server.zip
 #### macOS Universal Binary (works on both Apple Silicon and Intel):
 ```bash
 # Download the universal version
-curl -L https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-universal.zip -o unsplash-mcp-server.zip
+curl -L https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-macos-universal.zip -o unsplash-mcp-server.zip
 unzip unsplash-mcp-server.zip
 chmod +x unsplash-mcp-server
 
@@ -105,7 +105,7 @@ rm unsplash-mcp-server.zip
 #### Linux on x86_64 (most common):
 ```bash
 # Download the amd64 version
-curl -L https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-linux-amd64.tar.gz -o unsplash-mcp-server.tar.gz
+curl -L https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-linux-amd64.tar.gz -o unsplash-mcp-server.tar.gz
 tar -xzf unsplash-mcp-server.tar.gz
 chmod +x unsplash-mcp-server
 
@@ -118,7 +118,7 @@ rm unsplash-mcp-server.tar.gz
 #### Linux on ARM64 (e.g., Raspberry Pi 4, AWS Graviton):
 ```bash
 # Download the arm64 version
-curl -L https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-linux-arm64.tar.gz -o unsplash-mcp-server.tar.gz
+curl -L https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-linux-arm64.tar.gz -o unsplash-mcp-server.tar.gz
 tar -xzf unsplash-mcp-server.tar.gz
 chmod +x unsplash-mcp-server
 
@@ -133,12 +133,12 @@ rm unsplash-mcp-server.tar.gz
 <summary><b>Windows Installation</b></summary>
 
 #### Windows on x86_64 (most common):
-- Download the [Windows AMD64 version](https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-windows-amd64.zip)
+- Download the [Windows AMD64 version](https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-windows-amd64.zip)
 - Extract the ZIP file
 - Move the `unsplash-mcp-server.exe` to a location in your PATH
 
 #### Windows on ARM64 (e.g., Windows on ARM devices):
-- Download the [Windows ARM64 version](https://github.com/yourusername/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-windows-arm64.zip)
+- Download the [Windows ARM64 version](https://github.com/okooo5km/unsplash-mcp-server-go/releases/latest/download/unsplash-mcp-server-windows-arm64.zip)
 - Extract the ZIP file
 - Move the `unsplash-mcp-server.exe` to a location in your PATH
 </details>
@@ -153,7 +153,7 @@ Make sure the installation directory is in your PATH:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/unsplash-mcp-server-go.git
+   git clone https://github.com/okooo5km/unsplash-mcp-server-go.git
    cd unsplash-mcp-server-go
    ```
 
