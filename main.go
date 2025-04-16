@@ -190,22 +190,10 @@ func createSearchPhotosTool(client *UnsplashClient) (mcp.Tool, server.ToolHandle
 		if pp, ok := request.Params.Arguments["per_page"].(string); ok {
 			perPage, err := strconv.Atoi(pp)
 			if err == nil {
-				input.PerPage = perPage
-				if input.PerPage > 30 {
-					input.PerPage = 30
-				} // Enforce max
-				if input.PerPage < 1 {
-					input.PerPage = 1
-				} // Enforce min
+				input.PerPage = min(max(perPage, 1), 30)
 			}
 		} else if pp, ok := request.Params.Arguments["per_page"].(float64); ok {
-			input.PerPage = int(pp)
-			if input.PerPage > 30 {
-				input.PerPage = 30
-			} // Enforce max
-			if input.PerPage < 1 {
-				input.PerPage = 1
-			} // Enforce min
+			input.PerPage = min(max(int(pp), 1), 30)
 		}
 		params.Set("per_page", strconv.Itoa(input.PerPage))
 
@@ -298,26 +286,15 @@ func createRandomPhotoTool(client *UnsplashClient) (mcp.Tool, server.ToolHandler
 		if c, ok := request.Params.Arguments["count"].(string); ok {
 			countNum, err := strconv.Atoi(c)
 			if err == nil {
-				count = countNum
-				if count > 30 {
-					count = 30
-				}
-				if count < 1 {
-					count = 1
-				}
-				params.Set("count", strconv.Itoa(count))
+				count = min(max(countNum, 1), 30)
 			}
 		} else if c, ok := request.Params.Arguments["count"].(float64); ok {
-			count = int(c)
-			if count > 30 {
-				count = 30
-			}
-			if count < 1 {
-				count = 1
-			}
-			params.Set("count", strconv.Itoa(count))
+			count = min(max(int(c), 1), 30)
 		}
 		// Note: Don't set count param if it's 1, as the API endpoint changes behavior
+		if count > 1 {
+			params.Set("count", strconv.Itoa(count))
+		}
 
 		if v, ok := request.Params.Arguments["collections"].(string); ok && v != "" {
 			params.Set("collections", v)
@@ -352,17 +329,17 @@ func createRandomPhotoTool(client *UnsplashClient) (mcp.Tool, server.ToolHandler
 		}
 
 		var photos []UnsplashPhoto
-		// API returns single object if count=1 or omitted, array otherwise
-		if count == 1 {
+		// According to the API documentation:
+		// 1. If no count parameter is provided, it returns a single object
+		// 2. If count parameter is provided (even if it's 1), it returns an array
+		// First try to parse as an array, if that fails try to parse as a single object
+		if err := json.Unmarshal(body, &photos); err != nil {
+			// If parsing as array fails, try parsing as a single object (when no count parameter was provided)
 			var singlePhoto UnsplashPhoto
 			if err := json.Unmarshal(body, &singlePhoto); err != nil {
-				return nil, fmt.Errorf("failed to decode single random photo: %w", err)
+				return nil, fmt.Errorf("failed to decode random photo: %w", err)
 			}
 			photos = append(photos, singlePhoto)
-		} else {
-			if err := json.Unmarshal(body, &photos); err != nil {
-				return nil, fmt.Errorf("failed to decode multiple random photos: %w", err)
-			}
 		}
 
 		var resultText strings.Builder
